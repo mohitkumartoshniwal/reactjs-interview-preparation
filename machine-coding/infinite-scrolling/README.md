@@ -1,0 +1,2 @@
+- https://dummyjson.com/docs/products
+- https://github.com/D3vd/Meme_Api
