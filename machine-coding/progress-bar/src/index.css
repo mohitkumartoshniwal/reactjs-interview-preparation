@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.progress {
+  position: relative;
+  width: 30rem;
+  height: 2rem;
+  background-color: var(--bg-color);
+  border-radius: 2rem;
+  /* To avoid lodaer color overflow */
+  overflow: hidden;
+}
+
+.progress__text {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.progress__loader {
+  background-color: var(--loader-color);
+  color: white;
+  height: 100%;
+  border-radius: 2rem;
+}
