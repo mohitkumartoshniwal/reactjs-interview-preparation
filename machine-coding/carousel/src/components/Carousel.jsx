@@ -1,17 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useEffect } from "react";
 import { useState } from "react";
 
-const images = [
-  "https://picsum.photos/seed/1/800/500",
-  "https://picsum.photos/seed/2/800/500",
-  "https://picsum.photos/seed/3/800/500",
-  "https://picsum.photos/seed/4/800/500",
-  "https://picsum.photos/seed/5/800/500",
-];
-
-const DELAY = 2000;
-
-const Carousel = () => {
+const Carousel = ({
+  images = ["https://picsum.photos/seed/1/800/500"],
+  delay = 1000,
+}) => {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   function loadPreviousImage() {
@@ -29,7 +23,7 @@ const Carousel = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       loadNextImage();
-    }, DELAY);
+    }, delay);
 
     return () => clearInterval(intervalId);
   }, []);
