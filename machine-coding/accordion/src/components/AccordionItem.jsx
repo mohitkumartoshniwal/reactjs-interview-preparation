@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /**
  * Additional vaildations for props can be added using @see https://www.npmjs.com/package/prop-types
  */

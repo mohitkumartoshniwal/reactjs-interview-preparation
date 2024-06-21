@@ -1,7 +1,4 @@
-/* eslint-disable react/prop-types */
-import { useEffect } from "react";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
 const Carousel = ({
   images = ["https://picsum.photos/seed/1/800/500"],
   delay = 1000,

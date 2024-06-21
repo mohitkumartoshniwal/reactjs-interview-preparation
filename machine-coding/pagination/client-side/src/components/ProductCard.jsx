@@ -1,4 +1,3 @@
-// eslint-disable-next-line react/prop-types
 const ProductCard = ({ title, thumbnail }) => {
   return (
     <div className="card">
