@@ -23,7 +23,7 @@ body,
   height: 2rem;
   background-color: var(--bg-color);
   border-radius: 2rem;
-  /* To avoid lodaer color overflow */
+  /* To avoid loader color overflow */
   overflow: hidden;
 }
 
