@@ -1,0 +1,23 @@
+{
+  "schema": [
+    {
+      "label": "Title",
+      "name": "title",
+      "fieldType": "SelectList",
+      "multiple": false,
+      "options": ["Ms", "Mr"]
+    },
+    {
+      "label": "First Name",
+      "name": "firstName",
+      "fieldType": "Text",
+      "placeholder": "First Name"
+    },
+    {
+      "label": "Last Name",
+      "name": "lastName",
+      "fieldType": "Text",
+      "placeholder": "Last Name"
+    }
+  ]
+}
