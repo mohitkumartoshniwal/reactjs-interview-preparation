@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+// Main logic is to check whether event.target is a descendant of ref.current
 const useOnClickOutside = (ref, callback) => {
   useEffect(() => {
     function listener(event) {
