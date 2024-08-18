@@ -4,7 +4,7 @@ This repositiory's goal is to be a one stop place for your react interview prepa
 
 ## Machine Coding in React
 
-| Machine Coding        | Solution                                            |
+| Problem               | Solution                                            |
 | --------------------- | --------------------------------------------------- |
 | Timer                 | [Solution](./machine-coding/timer)                  |
 | Star Rating           | [Solution](./machine-coding/star-rating/)           |
