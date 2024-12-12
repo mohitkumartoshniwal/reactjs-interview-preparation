@@ -1,8 +1,21 @@
 import { useEffect, useState } from "react";
 
-const useFetch = (url, options = { method: "GET" }) => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState(null);
+interface FetchOptions extends RequestInit {
+  method?: string;
+}
+
+interface FetchResult<T> {
+  data: T | null;
+  error: Error | null;
+  isLoading: boolean;
+}
+
+const useFetch = <T,>(
+  url: string,
+  options: FetchOptions = { method: "GET" }
+): FetchResult<T> => {
+  const [data, setData] = useState<T | null>(null);
+  const [error, setError] = useState<Error | null>(null);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -19,7 +32,7 @@ const useFetch = (url, options = { method: "GET" }) => {
         const result = await response.json();
         setData(result);
       } catch (error) {
-        setError(error);
+        setError(error as Error);
       } finally {
         setIsLoading(false);
       }
