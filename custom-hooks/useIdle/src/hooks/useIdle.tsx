@@ -5,9 +5,9 @@ import { useState, useEffect, useRef } from "react";
  * and create a new timer based on the events
  * and set the isIdle state variable
  */
-const useIdle = (delay) => {
+const useIdle = (delay: number): boolean => {
   const [isIdle, setIsIdle] = useState(false);
-  const timerRef = useRef();
+  const timerRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     function resetIdleTimer() {
