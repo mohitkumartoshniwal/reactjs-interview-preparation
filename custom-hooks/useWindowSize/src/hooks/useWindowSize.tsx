@@ -1,10 +1,15 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const useWindowSize = () => {
+interface WindowSize {
+  width: number | null;
+  height: number | null;
+}
+
+
+const useWindowSize = () : WindowSize => {
   // One can set initial values here itself but if one is using an SSR first framework,
   // then we need to set null values
-  const [windowSize, setWindowSize] = useState({
+  const [windowSize, setWindowSize] = useState<WindowSize>({
     width: null,
     height: null,
   });
@@ -22,7 +27,7 @@ const useWindowSize = () => {
 
     window.addEventListener("resize", handleResize);
 
-    () => {
+   return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
