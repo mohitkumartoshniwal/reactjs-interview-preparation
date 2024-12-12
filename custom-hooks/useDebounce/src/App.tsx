@@ -8,7 +8,7 @@ export default function App() {
     setInputText(e.target.value);
   }
 
-  const debouncedValue = useDebounce(inputText, 1000);
+  const debouncedValue = useDebounce<string>(inputText, 1000);
 
   return (
     <div className="container">
