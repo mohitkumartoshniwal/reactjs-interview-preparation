@@ -1,8 +1,8 @@
-import { useRef } from "react";
+import { DependencyList, EffectCallback, useRef } from "react";
 
-const useCustomEffect = (effect, deps) => {
+const useCustomEffect = (effect: EffectCallback, deps: DependencyList) => {
   const isFirstRender = useRef(true);
-  const prevDeps = useRef([]);
+  const prevDeps = useRef<DependencyList>([]);
 
   //   first render scenario
   if (isFirstRender.current) {
