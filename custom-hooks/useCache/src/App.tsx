@@ -1,12 +1,18 @@
 import { useState } from "react";
 import useCache from "./hooks/useCache";
 
+interface User {
+  id: number;
+  name: string;
+  username: string;
+  email: string;
+}
+
 // TODO A little finicky implementation, need to make it more robust and reusable
 export default function App() {
-  const { getCache, setCache } = useCache("cache", 3600, localStorage); // Cache expires in 1 hour
-  useCache();
+  const { getCache, setCache } = useCache<User>("cache", 3600); // Cache expires in 1 hour
 
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<User | null>(null);
   const [loading, setLoading] = useState(false);
 
   const fetchData = () => {
@@ -17,7 +23,7 @@ export default function App() {
 
     if (cachedData) {
       console.log("Using cached data:", cachedData);
-      setData(data);
+      setData(cachedData);
       setLoading(false);
     } else {
       console.log("Fetching new data...");
@@ -29,7 +35,7 @@ export default function App() {
 
           return response.json();
         })
-        .then((data) => {
+        .then((data: User) => {
           setData(data);
           setCache(API, data);
           setLoading(false);
@@ -44,14 +50,10 @@ export default function App() {
   return (
     <div className="container">
       <h1>API Data</h1>
-      <button onClick={fetchData}>Fetch Data</button>
-      {loading ? (
-        <p>Loading...</p>
-      ) : data ? (
-        <pre>{JSON.stringify(data, null, 2)}</pre>
-      ) : (
-        <p>No data available</p>
-      )}
+      <button type="button" onClick={fetchData} disabled={loading}>
+        {loading ? "Loading..." : "Fetch Data"}
+      </button>
+      {data && <pre>{JSON.stringify(data, null, 2)}</pre>}
     </div>
   );
 }
