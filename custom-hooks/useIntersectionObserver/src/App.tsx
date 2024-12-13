@@ -2,9 +2,9 @@ import { useMemo, useRef } from "react";
 import useIntersectionObserver from "./hooks/useIntersectionObserver";
 
 export default function App() {
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement | null>(null);
 
-  const options = useMemo(
+  const options = useMemo<IntersectionObserverInit>(
     () => ({
       root: null,
       rootMargin: "0px",
