@@ -1,10 +1,13 @@
-import { useEffect } from "react";
+import { MutableRefObject, useEffect } from "react";
 
 // Main logic is to check whether event.target is a descendant of ref.current
-const useOnClickOutside = (ref, callback) => {
+const useOnClickOutside = (
+  ref: MutableRefObject<Element | null>,
+  callback: () => void
+) => {
   useEffect(() => {
-    function listener(event) {
-      if (!ref.current || ref.current.contains(event.target)) {
+    function listener(event: MouseEvent | TouchEvent) {
+      if (!ref.current || ref.current.contains(event.target as Node)) {
         return;
       }
 

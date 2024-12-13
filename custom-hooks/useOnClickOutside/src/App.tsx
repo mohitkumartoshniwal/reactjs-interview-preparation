@@ -2,7 +2,7 @@ import { useRef } from "react";
 import useOnClickOutside from "./hooks/useOnClickOutside";
 
 export default function App() {
-  const ref = useRef();
+  const ref = useRef<HTMLParagraphElement | null>(null);
 
   useOnClickOutside(ref, () => {
     console.log("Clicked outside");
@@ -10,8 +10,16 @@ export default function App() {
   return (
     <div className="container">
       <p>Clicked outside</p>
-      <p ref={ref} onClick={() => console.log("clicked inside")}>
-        CLick
+      <p
+        style={{
+          backgroundColor: "greenyellow",
+          width: "5rem",
+          height: "5rem",
+        }}
+        ref={ref}
+        onClick={() => console.log("clicked inside")}
+      >
+        Click
       </p>
     </div>
   );
