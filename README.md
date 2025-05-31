@@ -5,7 +5,7 @@ This repositiory's goal is to be a one stop place for your react interview prepa
 ## Machine Coding in React
 
 | Problem               | Solution                                            |
-| --------------------- | --------------------------------------------------- | --- |
+| --------------------- | --------------------------------------------------- |
 | Timer                 | [Solution](./machine-coding/timer)                  |
 | Star Rating           | [Solution](./machine-coding/star-rating/)           |
 | Accordion             | [Solution](./machine-coding/accordion/)             |
@@ -18,7 +18,7 @@ This repositiory's goal is to be a one stop place for your react interview prepa
 | Reusable Table        | [Solution](./machine-coding/reusable-table/)        |
 | Toast Component       | [Solution](./machine-coding/toast-component/)       |
 | Pagination            | [Solution](./machine-coding/pagination/)            |
-| File Explorer         | [Solution](./machine-coding/file-explorer/)         |     |
+| File Explorer         | [Solution](./machine-coding/file-explorer/)         |
 
 ## React Hooks
 
